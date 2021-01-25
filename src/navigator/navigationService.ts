@@ -3,6 +3,8 @@ import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {StackActions} from '@react-navigation/native';
 
+import {DrawerActions} from '@react-navigation/native';
+
 // @ts-ignore
 export const navigationRef: NavigationContainer = React.createRef();
 
@@ -22,6 +24,10 @@ const pop = () => {
   navigationRef.current?.goBack();
 };
 
+const openDrawer = () => {
+  navigationRef.current.dispatch(DrawerActions.openDrawer());
+};
+
 // const resetMain = () => {
 //   navigationRef.current?.reset({
 //     index: 0,
@@ -33,4 +39,5 @@ export default {
   navigate,
   pop,
   replace,
+  openDrawer,
 };

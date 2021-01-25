@@ -3,15 +3,14 @@ import {Config} from '../../../../config_app';
 import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
-  containerWrapper: {
-    flex: 1,
+  buttonRigh: {
+    width: 46,
+    height: 46,
     backgroundColor: Theme[Config.theme].secondColor,
-  },
-  scrollContainer: {
-    height: '90%',
-    maxHeight: '97%',
-    backgroundColor: Theme[Config.theme].mainColor,
-    borderBottomLeftRadius: 42,
-    borderBottomRightRadius: 42,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 18,
+    marginRight: 33,
+    marginTop: 18,
   },
 });
