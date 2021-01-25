@@ -12,7 +12,7 @@ const reducer = combineReducers({
 const configPersistor = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['menuReducer'],
+  blacklist: ['menuReducer', 'authReducer'],
 };
 
 export default persistReducer(configPersistor, reducer);

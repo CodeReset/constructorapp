@@ -13,5 +13,6 @@ export const styles = StyleSheet.create({
     backgroundColor: Theme[Config.theme].mainColor,
     borderBottomLeftRadius: 42,
     borderBottomRightRadius: 42,
+    paddingHorizontal:30
   },
 });

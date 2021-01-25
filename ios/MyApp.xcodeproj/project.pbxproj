@@ -16,6 +16,19 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* MyAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MyAppTests.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		255BE33E0BCE485A89697883 /* Mont-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 68E6BAFA87A34AF091454E58 /* Mont-Black.ttf */; };
+		24BD3AC1B59149D48C053E4D /* Mont-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 066DBABA8BC5490F9FD98437 /* Mont-BlackItalic.ttf */; };
+		65B436FDD2E04211AAE07DD6 /* Mont-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FBF759EBA2A418A9AC5E06F /* Mont-Bold.ttf */; };
+		B40396E3243F446084C5FEB6 /* Mont-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E3AE5AB2EA54CE1885BA8F6 /* Mont-ExtraLight.ttf */; };
+		C0A7D2F876CF455CAE6D6223 /* Mont-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02B88E9FC91944CEAB6AAD09 /* Mont-ExtraLightItalic.ttf */; };
+		96F390859D784C3588E3C959 /* Mont-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7EDB0876BE5748438471BF60 /* Mont-Heavy.ttf */; };
+		7A7B39DBF967426881E5031A /* Mont-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1710F866CADA4CFE8BC6E9AC /* Mont-HeavyItalic.ttf */; };
+		27C38CCA50AF4327B316E3B2 /* Mont-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BC0450E6E5064698819DC9F9 /* Mont-Light.ttf */; };
+		C77D13E21F354D24A0E0462E /* Mont-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B6BD56564B846418F7FD21A /* Mont-Regular.ttf */; };
+		796950B880F24FDB9857EEA0 /* Mont-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBF1F830DED49F386ADF688 /* Mont-RegularItalic.ttf */; };
+		633DBEAA050D4A84A0377E92 /* Mont-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95EE95E2863244B4911CA9CD /* Mont-SemiBold.ttf */; };
+		AFD1F03B36F9424CB67DF5D4 /* Mont-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7C32C0707CEA4E65B385A948 /* Mont-SemiBoldItalic.ttf */; };
+		7DDE9F8827EB46068010341D /* Mont-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA22A8A86ADE471A8E2995F0 /* Mont-Thin.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +64,19 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = MyApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		68E6BAFA87A34AF091454E58 /* Mont-Black.ttf */ = {isa = PBXFileReference; name = "Mont-Black.ttf"; path = "../src/assets/fonts/Mont-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		066DBABA8BC5490F9FD98437 /* Mont-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Mont-BlackItalic.ttf"; path = "../src/assets/fonts/Mont-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FBF759EBA2A418A9AC5E06F /* Mont-Bold.ttf */ = {isa = PBXFileReference; name = "Mont-Bold.ttf"; path = "../src/assets/fonts/Mont-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9E3AE5AB2EA54CE1885BA8F6 /* Mont-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Mont-ExtraLight.ttf"; path = "../src/assets/fonts/Mont-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		02B88E9FC91944CEAB6AAD09 /* Mont-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "Mont-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Mont-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7EDB0876BE5748438471BF60 /* Mont-Heavy.ttf */ = {isa = PBXFileReference; name = "Mont-Heavy.ttf"; path = "../src/assets/fonts/Mont-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1710F866CADA4CFE8BC6E9AC /* Mont-HeavyItalic.ttf */ = {isa = PBXFileReference; name = "Mont-HeavyItalic.ttf"; path = "../src/assets/fonts/Mont-HeavyItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BC0450E6E5064698819DC9F9 /* Mont-Light.ttf */ = {isa = PBXFileReference; name = "Mont-Light.ttf"; path = "../src/assets/fonts/Mont-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5B6BD56564B846418F7FD21A /* Mont-Regular.ttf */ = {isa = PBXFileReference; name = "Mont-Regular.ttf"; path = "../src/assets/fonts/Mont-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2CBF1F830DED49F386ADF688 /* Mont-RegularItalic.ttf */ = {isa = PBXFileReference; name = "Mont-RegularItalic.ttf"; path = "../src/assets/fonts/Mont-RegularItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		95EE95E2863244B4911CA9CD /* Mont-SemiBold.ttf */ = {isa = PBXFileReference; name = "Mont-SemiBold.ttf"; path = "../src/assets/fonts/Mont-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7C32C0707CEA4E65B385A948 /* Mont-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Mont-SemiBoldItalic.ttf"; path = "../src/assets/fonts/Mont-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA22A8A86ADE471A8E2995F0 /* Mont-Thin.ttf */ = {isa = PBXFileReference; name = "Mont-Thin.ttf"; path = "../src/assets/fonts/Mont-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +166,7 @@
 				00E356EF1AD99517003FC87E /* MyAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				A0BB7924085B4470AC04226F /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -156,6 +183,27 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		A0BB7924085B4470AC04226F /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				68E6BAFA87A34AF091454E58 /* Mont-Black.ttf */,
+				066DBABA8BC5490F9FD98437 /* Mont-BlackItalic.ttf */,
+				8FBF759EBA2A418A9AC5E06F /* Mont-Bold.ttf */,
+				9E3AE5AB2EA54CE1885BA8F6 /* Mont-ExtraLight.ttf */,
+				02B88E9FC91944CEAB6AAD09 /* Mont-ExtraLightItalic.ttf */,
+				7EDB0876BE5748438471BF60 /* Mont-Heavy.ttf */,
+				1710F866CADA4CFE8BC6E9AC /* Mont-HeavyItalic.ttf */,
+				BC0450E6E5064698819DC9F9 /* Mont-Light.ttf */,
+				5B6BD56564B846418F7FD21A /* Mont-Regular.ttf */,
+				2CBF1F830DED49F386ADF688 /* Mont-RegularItalic.ttf */,
+				95EE95E2863244B4911CA9CD /* Mont-SemiBold.ttf */,
+				7C32C0707CEA4E65B385A948 /* Mont-SemiBoldItalic.ttf */,
+				DA22A8A86ADE471A8E2995F0 /* Mont-Thin.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +343,19 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				255BE33E0BCE485A89697883 /* Mont-Black.ttf in Resources */,
+				24BD3AC1B59149D48C053E4D /* Mont-BlackItalic.ttf in Resources */,
+				65B436FDD2E04211AAE07DD6 /* Mont-Bold.ttf in Resources */,
+				B40396E3243F446084C5FEB6 /* Mont-ExtraLight.ttf in Resources */,
+				C0A7D2F876CF455CAE6D6223 /* Mont-ExtraLightItalic.ttf in Resources */,
+				96F390859D784C3588E3C959 /* Mont-Heavy.ttf in Resources */,
+				7A7B39DBF967426881E5031A /* Mont-HeavyItalic.ttf in Resources */,
+				27C38CCA50AF4327B316E3B2 /* Mont-Light.ttf in Resources */,
+				C77D13E21F354D24A0E0462E /* Mont-Regular.ttf in Resources */,
+				796950B880F24FDB9857EEA0 /* Mont-RegularItalic.ttf in Resources */,
+				633DBEAA050D4A84A0377E92 /* Mont-SemiBold.ttf in Resources */,
+				AFD1F03B36F9424CB67DF5D4 /* Mont-SemiBoldItalic.ttf in Resources */,
+				7DDE9F8827EB46068010341D /* Mont-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
