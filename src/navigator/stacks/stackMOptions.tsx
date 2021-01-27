@@ -6,5 +6,4 @@ import FavoriteRight from '../../components/UI/FavoriteRight/FavoriteRight';
 export const stackMOptions = {
   title: '',
   headerBackImage: () => <BackArrow />,
-  headerRight: () => <FavoriteRight />,
 };

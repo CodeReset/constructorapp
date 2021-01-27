@@ -2,6 +2,7 @@ import {
   CHANGE_SEARCH_VALUE,
   SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
+  TO_FROM_FOVORITE,
 } from '../../actions/menuAction';
 
 export interface ICategoryList {
@@ -103,6 +104,10 @@ const initialState: any = {
       price: 1200,
     },
   ],
+
+  // Fovorite array
+  favoriteItems: [],
+
   searchValue: '',
 
   // Selected Items
@@ -127,6 +132,25 @@ export const menuReducer = (state: any = initialState, action: any): any => {
       return {
         ...state,
         selectedCategory: action.payload,
+      };
+
+    // Add and Remove product from fovorite
+    case TO_FROM_FOVORITE:
+      if (
+        !state.favoriteItems.some(
+          (item: any) => item.productId === action.payload.productId,
+        )
+      ) {
+        return {
+          ...state,
+          favoriteItems: [action.payload, ...state.favoriteItems],
+        };
+      }
+      return {
+        ...state,
+        favoriteItems: state.favoriteItems.filter(
+          (item: any) => item.productId !== action.payload.productId,
+        ),
       };
 
     default:

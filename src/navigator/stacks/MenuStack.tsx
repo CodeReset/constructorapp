@@ -10,6 +10,8 @@ import AvatarButton from '../../components/UI/Avatar/AvatarButton';
 import {Config} from '../../../config_app';
 import DrawerControl from '../../components/UI/DrawerControl/DrawerControl';
 import {stackMOptions} from './stackMOptions';
+import FavoriteIcon from '../../assets/svg/FavoriteIcon';
+import FavoriteRight from '../../components/UI/FavoriteRight/FavoriteRight';
 
 const Stack = createStackNavigator();
 
@@ -30,12 +32,13 @@ const MenuStack = () => {
       <Stack.Screen
         name={Screens.MENU_DETAILINFO_SCREEN}
         component={DetailInformation}
-        options={{
+        options={({route}: any) => ({
           headerShown: true,
           headerTransparent: true,
           headerBackTitleVisible: false,
+          headerRight: () => <FavoriteRight info={route?.params?.info} />,
           ...stackMOptions,
-        }}
+        })}
       />
     </Stack.Navigator>
   );

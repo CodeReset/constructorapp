@@ -6,6 +6,8 @@ export const CHANGE_SEARCH_VALUE = 'changeSearchValue';
 export const SET_DEFAULT_CATEGORY_VAL = 'changeDefaultCatVal';
 export const CHANGE_ACTIVE_CATEGORY = 'changeActiveCategory';
 
+export const TO_FROM_FOVORITE = 'toFromFovorite';
+
 export interface GetUsers {
   type: typeof GET_ALL_USERS;
   payload: any;

@@ -5,6 +5,7 @@ import {Screens} from '../consts/ScreensName';
 
 import {ProfileMain} from '../../screens/Profile/ProfileMain';
 import {ProfileDetailInfo} from '../../screens/Profile/ProfileDetailInfo';
+import {defaultStackOption} from './defaultStackOption';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,11 @@ const ProfileStack = () => {
       <Stack.Screen
         name={Screens.PROFILE_MAIN_SCREEN}
         component={ProfileMain}
+        options={{
+          ...defaultStackOption,
+          title: 'Favorite',
+          headerTitleAlign: 'center',
+        }}
       />
       <Stack.Screen
         name={Screens.PROFILE_DETAILINFO_SCREEN}
