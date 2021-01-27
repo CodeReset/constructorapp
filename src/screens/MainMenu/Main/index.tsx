@@ -6,12 +6,14 @@ import ProductList from '../../../components/ProductList/ProductList';
 
 import Heading from '../../../components/UI/Heading/Heading';
 import SearchPanel from '../../../components/UI/SearchPanel/SearchPanel';
+import {Screens} from '../../../navigator/consts/ScreensName';
+import navigationService from '../../../navigator/navigationService';
 import {
   CHANGE_SEARCH_VALUE,
   SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
 } from '../../../store/actions/menuAction';
-import {ICategoryList} from '../../../store/reducers/menu';
+import {ICategoryList, IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
 import {selectProducts} from './selectProducts';
 import {styles} from './style';
@@ -51,6 +53,15 @@ export const Main = () => {
   // Get all products
   const producetsItems = useSelector((state: any) => selectProducts(state));
 
+  // Add item to cart
+  const addToCart = (item: IProductList) => {
+    console.log('Add item to cart', item);
+  };
+
+  const goToDetailInformation = (item: IProductList) => {
+    navigationService.navigate(Screens.MENU_DETAILINFO_SCREEN, {info: item});
+  };
+
   return (
     <View style={styles.containerWrapper}>
       <ScrollView style={styles.scrollContainer}>
@@ -65,7 +76,11 @@ export const Main = () => {
           changeActiveCategory={changeActiveCategory}
         />
 
-        <ProductList list={producetsItems} />
+        <ProductList
+          list={producetsItems}
+          addToCart={addToCart}
+          goToDetailInformation={goToDetailInformation}
+        />
       </ScrollView>
     </View>
   );

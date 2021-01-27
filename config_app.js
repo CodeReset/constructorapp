@@ -1,4 +1,4 @@
 export const Config = {
-  navigatorTypeFromJSON: 'drawer',
+  navigatorTypeFromJSON: 'tabs',
   theme: 'light',
 };

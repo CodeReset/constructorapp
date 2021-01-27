@@ -16,6 +16,8 @@ export interface IProductList {
   name: string;
   description: string;
   price: number;
+  size?: any;
+  additional?: any;
 }
 
 const initialState: any = {
@@ -49,6 +51,40 @@ const initialState: any = {
       name: 'Saske Roll',
       description: 'Kino, kani, rice, avocado, ikra...',
       price: 1400,
+      size: [
+        {
+          id: 0,
+          size: 350,
+          val: 'gram',
+        },
+        {
+          id: 1,
+          size: 500,
+          val: 'gram',
+        },
+        {
+          id: 2,
+          size: 900,
+          val: 'gram',
+        },
+      ],
+      additional: [
+        {
+          id: 0,
+          name: 'Hot Jalapeno',
+          price: 2.5,
+        },
+        {
+          id: 1,
+          name: 'Mushrooms',
+          price: 2.5,
+        },
+        {
+          id: 2,
+          name: 'Hot Chiken',
+          price: 2.5,
+        },
+      ],
     },
     {
       img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',

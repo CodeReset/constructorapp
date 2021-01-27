@@ -7,13 +7,20 @@ import {styles} from './styles';
 
 interface Props {
   list: IProductList[];
+  addToCart: (item: IProductList) => void;
+  goToDetailInformation: (item: IProductList) => void;
 }
 
-const ProductList = ({list}: Props) => {
+const ProductList = ({list, addToCart, goToDetailInformation}: Props) => {
   return (
     <ScrollView style={styles.productList} horizontal={true}>
       {list.map((item: IProductList) => (
-        <ProductItem key={item.productId} product={item} />
+        <ProductItem
+          key={item.productId}
+          product={item}
+          addToCart={addToCart}
+          goToDetailInformation={goToDetailInformation}
+        />
       ))}
     </ScrollView>
   );
