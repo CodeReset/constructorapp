@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import {Text, View, ScrollView, ImageBackground} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+
 import FormLogin from '../../../components/FormLogin/FormLogin';
 import FormRegister from '../../../components/FormRegister/FormRegister';
+import TabProfileBar from '../../../components/TabProfileBar/TabProfileBar';
 
 import {styles} from './style';
 
-const Tabs = [
+const tabs = [
   {
     id: 0,
     name: 'Login',
@@ -17,13 +18,17 @@ const Tabs = [
   },
 ];
 
-interface ITabs {
+export interface ITabs {
   id: number;
   name: string;
 }
 
 export const ContactMain = () => {
   const [selectedTab, setSelectedTab] = useState<number>(0);
+
+  const changeTab = (id: number) => {
+    setSelectedTab(id);
+  };
 
   return (
     <ScrollView style={styles.backgroundScrollView}>
@@ -33,30 +38,7 @@ export const ContactMain = () => {
         <Text style={styles.textBgTop}>DigitalTm</Text>
       </ImageBackground>
 
-      <View style={styles.tabWrapper}>
-        <View style={styles.tabWrapperMain}>
-          {/* Refactoring */}
-          {!!Tabs.length &&
-            Tabs.map((item: ITabs) => (
-              <TouchableOpacity
-                key={item.id}
-                style={[
-                  styles.tabItemAuthentif,
-                  selectedTab === item.id && styles.activeTab,
-                ]}
-                onPress={() => setSelectedTab(item.id)}>
-                <Text
-                  style={[
-                    styles.tabItemAuthentifText,
-                    selectedTab === item.id && styles.activeTabText,
-                  ]}>
-                  {item.name}
-                </Text>
-              </TouchableOpacity>
-            ))}
-          {/* Refactoring */}
-        </View>
-      </View>
+      <TabProfileBar tabs={tabs} selectedTab={selectedTab} setTab={changeTab} />
 
       <View style={styles.wrapprFormContent}>
         {selectedTab === 0 ? <FormLogin /> : <FormRegister />}

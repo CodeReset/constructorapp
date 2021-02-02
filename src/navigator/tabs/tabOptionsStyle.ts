@@ -6,7 +6,6 @@ export const tabOptionsStyle = {
     elevation: 0,
     borderTopWidth: 0,
     backgroundColor: Theme[Config.theme].secondColor,
-    paddingBottom: 20,
   },
   activeTintColor: '#FD4035',
   inactiveTintColor: '#9FABC2',

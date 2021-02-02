@@ -13,4 +13,5 @@ export const Screens = {
   CONTACT_MAIN: 'contactMain',
 
   CART_MAIN: 'cartMain',
+  CART_MAP_ADRESS: 'cartMapAdress',
 };

@@ -2,6 +2,8 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import CartList from '../../../components/CartList/CartList';
+import {Screens} from '../../../navigator/consts/ScreensName';
+import navigationService from '../../../navigator/navigationService';
 import {REMOVE_FROM_CART} from '../../../store/actions/menuAction';
 import {IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
@@ -18,7 +20,7 @@ export const CartMain = () => {
   };
 
   const goNextPayment = () => {
-    console.log('GO to payment');
+    navigationService.navigate(Screens.CART_MAP_ADRESS);
   };
 
   return (

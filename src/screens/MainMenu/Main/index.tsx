@@ -12,6 +12,7 @@ import {
   CHANGE_SEARCH_VALUE,
   SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
+  SET_DEFAULT_ADRESS,
 } from '../../../store/actions/menuAction';
 import {ICategoryList, IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
@@ -24,6 +25,7 @@ export const Main = () => {
   // Set default Values
   useEffect(() => {
     dispatch({type: SET_DEFAULT_CATEGORY_VAL});
+    dispatch({type: SET_DEFAULT_ADRESS});
   }, []);
 
   // Get all categories

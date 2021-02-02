@@ -1,22 +1,18 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  backgroundScrollView: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-  },
-  bgTopContainer: {
-    width: '100%',
-    height: 279,
-    resizeMode: 'contain',
+  tabWrapper: {
+    height: 61,
+    backgroundColor: '#F3F6FA',
+    borderBottomRightRadius: 42,
+    borderBottomLeftRadius: 42,
+    justifyContent: 'flex-end',
     alignItems: 'center',
-    justifyContent: 'center',
   },
-  textBgTop: {
-    fontSize: 36,
-    lineHeight: 46,
-    color: '#FFFFFF',
-    fontFamily: 'Mont-Bold',
+  tabWrapperMain: {
+    width: 220,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   tabItemAuthentif: {
     paddingBottom: 15,
@@ -36,9 +32,5 @@ export const styles = StyleSheet.create({
   activeTabText: {
     color: '#141929',
     fontFamily: 'Mont-Bold',
-  },
-  wrapprFormContent: {
-    marginTop: 15,
-    paddingHorizontal: 30,
   },
 });

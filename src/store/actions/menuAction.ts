@@ -9,7 +9,12 @@ export const CHANGE_ACTIVE_CATEGORY = 'changeActiveCategory';
 // Cart
 export const REMOVE_FROM_CART = 'removeFromCart';
 
+// Favorite
 export const TO_FROM_FOVORITE = 'toFromFovorite';
+
+// Adress
+export const SET_DEFAULT_ADRESS = 'setDafaultAdress';
+export const CHANGE_DEFAULT_ADRESS = 'changeDefaultAdress';
 
 export interface GetUsers {
   type: typeof GET_ALL_USERS;

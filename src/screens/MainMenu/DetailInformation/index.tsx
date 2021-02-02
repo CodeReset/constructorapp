@@ -1,11 +1,18 @@
 import React, {useState} from 'react';
-import {Text, View, ScrollView, Image, ImageBackground} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import {
+  Text,
+  View,
+  ScrollView,
+  ImageBackground,
+  TouchableOpacity,
+} from 'react-native';
+
 import ClockIcon from '../../../assets/svg/ClockIcon';
 import FireCal from '../../../assets/svg/FireCal';
 import StarIcon from '../../../assets/svg/StarIcon';
-import SvgTestAdditional from '../../../assets/svg/SvgTestAdditional';
 import WeightIcon from '../../../assets/svg/WeightIcon';
+import AditionalProduct from '../../../components/AditionalProduct/AditionalProduct';
+import SizeProductList from '../../../components/SizeProductList/SizeProductList';
 import DetailScreenCount from '../../../components/UI/DetailScreenCount/DetailScreenCount';
 import Heading from '../../../components/UI/Heading/Heading';
 
@@ -23,6 +30,14 @@ export const DetailInformation = ({route}: any) => {
 
   // Refactor
   const [additional, setAdditional] = useState({});
+
+  const changeSetSize = (sizer: any) => {
+    setSize(sizer);
+  };
+
+  const changeSetAditional = (additionalize: any) => {
+    setAdditional(additionalize);
+  };
 
   return (
     <ScrollView style={styles.containerWrapper}>
@@ -67,65 +82,12 @@ export const DetailInformation = ({route}: any) => {
               </View>
             </View>
 
-            <View style={styles.qualityTopAlign}>
-              <Text style={styles.qualityTopAlignText}>Size</Text>
-
-              <View style={styles.wrapperSizeGramm}>
-                {/* Refactor */}
-                {info?.size?.length &&
-                  info.size.map((item: any) => (
-                    <TouchableOpacity
-                      key={item.id}
-                      onPress={() => setSize(item)}
-                      style={[
-                        styles.itemSizeGramm,
-                        size === item && styles.activeItemSizeGramm,
-                      ]}>
-                      <Text
-                        style={[
-                          styles.textSizeGramm,
-                          size === item && styles.activeTextSizeGramm,
-                        ]}>
-                        {item.size} {item.val}
-                      </Text>
-                    </TouchableOpacity>
-                  ))}
-                {/* Refactor */}
-              </View>
-            </View>
-
-            <View style={styles.additionStyle}>
-              {/* Refactor */}
-              {info?.additional?.length &&
-                info?.additional.map((item: any) => (
-                  <TouchableOpacity
-                    onPress={() => setAdditional(item)}
-                    style={[
-                      styles.additionStyleItem,
-                      additional === item && styles.activeAdditionStyleItem,
-                    ]}
-                    key={item.id}>
-                    <SvgTestAdditional colorProps={additional === item} />
-                    <Text
-                      style={[
-                        styles.additionStyleItemText,
-                        additional === item &&
-                          styles.activeAdditionStyleItemText,
-                      ]}>
-                      {item.name}
-                    </Text>
-                    <Text
-                      style={[
-                        styles.additionStyleItemPrice,
-                        additional === item &&
-                          styles.activeAdditionStyleItemPrice,
-                      ]}>
-                      ${item.price}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              {/* Refactor */}
-            </View>
+            <SizeProductList info={info} size={size} setSizec={changeSetSize} />
+            <AditionalProduct
+              info={info}
+              additional={additional}
+              setAdditionalC={changeSetAditional}
+            />
           </View>
         </ScrollView>
       </View>
