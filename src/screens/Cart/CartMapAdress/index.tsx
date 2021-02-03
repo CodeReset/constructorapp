@@ -9,6 +9,8 @@ import MarkerSVG from '../../../assets/svg/MarkerSVG';
 import AdressItem from '../../../components/AdressItem/AdressItem';
 import MapSheetHeader from '../../../components/MapSheetHeader/MapSheetHeader';
 import FormButton from '../../../components/UI/FormButton/FormButton';
+import {Screens} from '../../../navigator/consts/ScreensName';
+import navigationService from '../../../navigator/navigationService';
 import {
   CHANGE_DEFAULT_ADRESS,
   SET_DEFAULT_ADRESS,
@@ -41,7 +43,7 @@ export const CartMapAdress = () => {
   };
 
   const goToNextStep = () => {
-    console.log('GO TO NEXT STEP');
+    navigationService.navigate(Screens.CART_CHECKOUT);
   };
 
   useFocusEffect(

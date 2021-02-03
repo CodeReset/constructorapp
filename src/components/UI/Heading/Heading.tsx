@@ -5,7 +5,7 @@ import {styles} from './styles';
 
 interface Props {
   children: React.ReactNode;
-  marginTop: number;
+  marginTop?: number;
 }
 
 const Heading = ({children, marginTop = 0}: Props) => {

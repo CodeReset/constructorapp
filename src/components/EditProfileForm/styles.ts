@@ -16,7 +16,6 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
-    fontWeight: 'normal',
   },
   wrapperFormForgot: {
     alignItems: 'center',
@@ -35,5 +34,8 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Mont-SemiBold',
     marginTop: 5,
+  },
+  lastInput: {
+    marginTop: 25,
   },
 });

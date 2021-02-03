@@ -188,7 +188,7 @@ export const menuReducer = (state: any = initialState, action: any): any => {
     case SET_DEFAULT_CATEGORY_VAL:
       return {
         ...state,
-        selectedCategory: state?.categories[0]?.categoryId,
+        selectedCategory: state?.categories[2]?.categoryId,
       };
 
     case CHANGE_ACTIVE_CATEGORY:

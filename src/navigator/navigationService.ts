@@ -28,6 +28,10 @@ const openDrawer = () => {
   navigationRef.current.dispatch(DrawerActions.openDrawer());
 };
 
+const popToTop = () => {
+  navigationRef.current.dispatch(StackActions.popToTop());
+};
+
 // const resetMain = () => {
 //   navigationRef.current?.reset({
 //     index: 0,
@@ -40,4 +44,5 @@ export default {
   pop,
   replace,
   openDrawer,
+  popToTop,
 };

@@ -47,6 +47,7 @@ const FormRegister = () => {
             value={props.values.password}
             onChangeText={props.handleChange('password')}
             placeholder="Password"
+            secureTextEntry={true}
             placeholderTextColor="#9FABC2"
           />
           {props.errors.password && (

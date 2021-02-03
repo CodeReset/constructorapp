@@ -11,7 +11,11 @@ export const Screens = {
   PROFILE_DETAILINFO_SCREEN: 'profileDetailInfoScrren',
 
   CONTACT_MAIN: 'contactMain',
+  CONTACT_CHANGE_PASSWORD: 'contactChangePassword',
+  CONTACT_PROFILE_INFO: 'contactProfileInfo',
 
   CART_MAIN: 'cartMain',
   CART_MAP_ADRESS: 'cartMapAdress',
+  CART_SUCCESS: 'cartSucces',
+  CART_CHECKOUT: 'cartChecout',
 };

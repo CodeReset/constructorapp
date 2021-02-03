@@ -36,4 +36,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Mont-SemiBold',
     marginTop: 5,
   },
+  lastInput: {
+    marginTop: 25,
+  },
 });

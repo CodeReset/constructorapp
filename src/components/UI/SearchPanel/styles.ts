@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#141929',
     fontFamily: 'Mont-Regular',
+    fontWeight: 'normal',
   },
   buttonSvgWrapper: {
     width: '16%',

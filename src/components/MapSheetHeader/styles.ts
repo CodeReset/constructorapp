@@ -31,4 +31,39 @@ export const styles = StyleSheet.create({
     fontFamily: 'Mont-SemiBold',
     marginLeft: 10,
   },
+
+  additionalTest: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginTop: 25,
+  },
+
+  headingText: {
+    fontSize: 12,
+    lineHeight: 18,
+    color: '#9FABC2',
+    fontFamily: 'Mont-SemiBold',
+  },
+  contextText: {
+    fontSize: 14,
+    lineHeight: 18,
+    color: '#181D2D',
+    fontFamily: 'Mont-SemiBold',
+    marginTop: 5,
+  },
+  iconWrapper: {
+    width: 50,
+    height: 58,
+    borderRadius: 18,
+    borderWidth: 2,
+    borderColor: '#F3F6FA',
+    marginRight: 15,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  itemWrapperD: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
 });
