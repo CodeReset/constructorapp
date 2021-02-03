@@ -3,12 +3,14 @@ import {Text, View, TouchableOpacity, FlatList} from 'react-native';
 import SuccessSvg from '../../../assets/svg/SuccessSvg';
 
 import FormButton from '../../../components/UI/FormButton/FormButton';
+import {Screens} from '../../../navigator/consts/ScreensName';
+import navigationService from '../../../navigator/navigationService';
 
 import {styles} from './styles';
 
 const CartSuccess = () => {
   const goToTrack = () => {
-    console.log('GO TO TRACK');
+    navigationService.navigate(Screens.CART_MAP_TRAKER);
   };
 
   return (

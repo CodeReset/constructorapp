@@ -18,4 +18,5 @@ export const Screens = {
   CART_MAP_ADRESS: 'cartMapAdress',
   CART_SUCCESS: 'cartSucces',
   CART_CHECKOUT: 'cartChecout',
+  CART_MAP_TRAKER: 'cartMapTraker',
 };

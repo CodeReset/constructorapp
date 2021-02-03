@@ -10,6 +10,7 @@ import CartSuccess from '../../screens/Cart/CartSuccess/CartSuccess';
 import CartChecout from '../../screens/Cart/CartChecout/CartChecout';
 import BackArrow from '../../components/UI/BackArrow/BackArrow';
 import CloseButton from '../../components/UI/CloseButton/CloseButton';
+import CartMapTrack from '../../screens/Cart/CartMapTrack/CartMapTrack';
 
 const Stack = createStackNavigator();
 
@@ -53,6 +54,15 @@ const CartStack = (): JSX.Element => {
           ...stackMOptions,
           headerLeft: () => null,
           headerRight: () => <CloseButton />,
+          headerTransparent: true,
+        }}
+      />
+
+      <Stack.Screen
+        name={Screens.CART_MAP_TRAKER}
+        component={CartMapTrack}
+        options={{
+          ...stackMOptions,
           headerTransparent: true,
         }}
       />
