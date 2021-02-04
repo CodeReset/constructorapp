@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, View, ScrollView, ImageBackground} from 'react-native';
+import {useDispatch} from 'react-redux';
 
 import FormLogin from '../../../components/FormLogin/FormLogin';
 import FormRegister from '../../../components/FormRegister/FormRegister';
 import TabProfileBar from '../../../components/TabProfileBar/TabProfileBar';
+import { getToken } from '../../../helpers/tokenHelper';
 import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
+import {authLogin, authSignup} from '../../../store/actionTypes/authentification';
 
 import {styles} from './style';
 
@@ -30,7 +33,27 @@ export interface ILoginForm {
   password: string;
 }
 
+export interface ISignUpForm {
+  email: string;
+  fullname:string;
+  password: string;
+}
+
 export const ContactMain = () => {
+  useEffect(()=>{
+    getTokenAsync()
+  },[])
+
+  const getTokenAsync =  async ()=>{
+    const token = await getToken()
+    if(token){
+      navigationService.navigate(Screens.CONTACT_PROFILE_INFO)
+    }
+  }
+
+
+  const dispatch = useDispatch();
+
   const [selectedTab, setSelectedTab] = useState<number>(0);
 
   const changeTab = (id: number) => {
@@ -42,9 +65,14 @@ export const ContactMain = () => {
   };
 
   const goToProfile = (values: ILoginForm) => {
-    console.log(values);
-    navigationService.navigate(Screens.CONTACT_PROFILE_INFO, {values});
+    const {email, password} = values;
+    dispatch(authLogin(email, password));
   };
+
+  const goToSignUp = (values:ISignUpForm)=>{
+    const {email, fullname, password} = values
+    dispatch(authSignup(email, fullname, password))
+  }
 
   return (
     <ScrollView style={styles.backgroundScrollView}>
@@ -63,7 +91,7 @@ export const ContactMain = () => {
             goToProfile={goToProfile}
           />
         ) : (
-          <FormRegister />
+          <FormRegister goToSignUp={goToSignUp} />
         )}
       </View>
     </ScrollView>

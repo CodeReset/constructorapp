@@ -6,14 +6,20 @@ import {Formik} from 'formik';
 import {styles} from './styles';
 import FormButton from '../UI/FormButton/FormButton';
 import {validationRegistrSchema} from './validationRegistrSchema';
+import { ISignUpForm } from '../../screens/Contact/ContactMain';
 
-const FormRegister = () => {
+interface Props {
+  goToSignUp:(values:ISignUpForm)=> void
+}
+
+const FormRegister = ({goToSignUp}:Props) => {
   return (
     <Formik
       initialValues={{fullname: '', email: '', password: ''}}
       validationSchema={validationRegistrSchema}
       onSubmit={(values) => {
         console.log(values);
+        goToSignUp(values)
       }}>
       {(props) => (
         <>

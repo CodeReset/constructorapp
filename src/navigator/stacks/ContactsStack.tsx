@@ -27,7 +27,7 @@ const ContactsStack = () => {
       <Stack.Screen
         name={Screens.CONTACT_PROFILE_INFO}
         component={ProfileInfo}
-        options={{...stackMOptions, headerTransparent: true}}
+        options={{headerShown:false}}
       />
     </Stack.Navigator>
   );

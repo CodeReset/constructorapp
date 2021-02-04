@@ -5,6 +5,7 @@ import {PersistGate} from 'redux-persist/integration/react';
 import {Config} from './config_app';
 import ErrorBoundary from './src/components/ErrorBoundary/ErrorBoundary';
 
+import FlashMessage from "react-native-flash-message";
 import Navigator from './src/navigator/Navigator';
 import {persistor, store} from './src/store/store';
 import {Theme} from './src/styles';
@@ -23,6 +24,7 @@ const App = () => {
           <PersistGate persistor={persistor}>
             <Navigator />
           </PersistGate>
+          <FlashMessage position="top" />
         </SafeAreaView>
       </ErrorBoundary>
     </Provider>
