@@ -11,19 +11,26 @@ import {styles} from './styles';
 interface Props {
   cartInfo: IProductList;
   removeItem: (item: IProductList) => void;
+  addItemFromCart: (item: IProductList) => void;
+  removeFromCart: (item: IProductList) => void;
 }
 
-const CartItem = ({cartInfo, removeItem}: Props) => {
+const CartItem = ({
+  cartInfo,
+  removeItem,
+  addItemFromCart,
+  removeFromCart,
+}: Props) => {
   return (
     <TouchableOpacity style={styles.fovoriteIconWrapper}>
       <Image style={styles.fovoriteIconImage} source={{uri: cartInfo.img}} />
       <View style={styles.counterItem}>
         {/* Icon plus */}
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => addItemFromCart(cartInfo)}>
           <PlusIconCart />
         </TouchableOpacity>
-        <Text style={styles.counterItemText}>1</Text>
-        <TouchableOpacity>
+        <Text style={styles.counterItemText}>{cartInfo.count}</Text>
+        <TouchableOpacity onPress={() => removeItem(cartInfo)}>
           <MinusIconCart />
         </TouchableOpacity>
         {/* Icon minus */}
@@ -38,7 +45,7 @@ const CartItem = ({cartInfo, removeItem}: Props) => {
         </Text>
         <Text style={styles.favoritePrice}>${cartInfo.price}</Text>
       </View>
-      <TouchableOpacity onPress={() => removeItem(cartInfo)}>
+      <TouchableOpacity onPress={() => removeFromCart(cartInfo)}>
         <CloseIconFavorite />
       </TouchableOpacity>
     </TouchableOpacity>

@@ -13,6 +13,7 @@ import {
   SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
   SET_DEFAULT_ADRESS,
+  SET_SELECTED_DETAIL_PROFILE,
 } from '../../../store/actions/menuAction';
 import {ICategoryList, IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
@@ -61,7 +62,8 @@ export const Main = () => {
   };
 
   const goToDetailInformation = (item: IProductList) => {
-    navigationService.navigate(Screens.MENU_DETAILINFO_SCREEN, {info: item});
+    dispatch({type: SET_SELECTED_DETAIL_PROFILE, payload: item});
+    navigationService.navigate(Screens.MENU_DETAILINFO_SCREEN);
   };
 
   return (

@@ -6,6 +6,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 
 import ClockIcon from '../../../assets/svg/ClockIcon';
 import FireCal from '../../../assets/svg/FireCal';
@@ -16,10 +17,21 @@ import SizeProductList from '../../../components/SizeProductList/SizeProductList
 import DetailScreenCount from '../../../components/UI/DetailScreenCount/DetailScreenCount';
 import Heading from '../../../components/UI/Heading/Heading';
 
+import {selectDetail} from './selectDetail';
+
+import {
+  ADD_TO_CART_MAIN,
+  REMOVE_FROM_CART_MAIN,
+} from '../../../store/actions/cartAdder';
+import {AppStore} from '../../../store/store';
+
 import {styles} from './style';
 
-export const DetailInformation = ({route}: any) => {
-  const {info} = route.params;
+export const DetailInformation = () => {
+  const dispatch = useDispatch();
+
+  const info = useSelector((state: AppStore) => selectDetail(state));
+  // const {info} = route.params;
 
   const addToCard = () => {
     console.log('Add to card');
@@ -37,6 +49,14 @@ export const DetailInformation = ({route}: any) => {
 
   const changeSetAditional = (additionalize: any) => {
     setAdditional(additionalize);
+  };
+
+  const addToCart = () => {
+    dispatch({type: ADD_TO_CART_MAIN, payload: info});
+  };
+
+  const removeFromCart = () => {
+    dispatch({type: REMOVE_FROM_CART_MAIN, payload: info});
   };
 
   return (
@@ -57,7 +77,11 @@ export const DetailInformation = ({route}: any) => {
 
             <View style={styles.qualityTopAlign}>
               <Text style={styles.qualityTopAlignText}>Quality</Text>
-              <DetailScreenCount />
+              <DetailScreenCount
+                count={info?.count || 0}
+                addToCart={addToCart}
+                removeFromCart={removeFromCart}
+              />
             </View>
 
             <View style={styles.descriptionIcons}>

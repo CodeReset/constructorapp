@@ -4,6 +4,7 @@ import {
   CHANGE_ACTIVE_CATEGORY,
   TO_FROM_FOVORITE,
   REMOVE_FROM_CART,
+  SET_SELECTED_DETAIL_PROFILE,
 } from '../../actions/menuAction';
 
 export interface ICategoryList {
@@ -16,6 +17,7 @@ export interface IProductList {
   productId: number;
   categoryId: number;
   name: string;
+  count: number;
   description: string;
   price: number;
   size?: any;
@@ -53,6 +55,7 @@ const initialState: any = {
       name: 'Saske Roll',
       description: 'Kino, kani, rice, avocado, ikra...',
       price: 1400,
+      count: 0,
       size: [
         {
           id: 0,
@@ -95,6 +98,7 @@ const initialState: any = {
       name: 'Naruto Roll',
       description: 'Kino, kani, rice, avocado, ikra...',
       price: 1300,
+      count: 0,
     },
     {
       img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
@@ -103,6 +107,7 @@ const initialState: any = {
       name: 'Boruto Roll',
       description: 'Kino, kani, rice, avocado, ikra...',
       price: 1200,
+      count: 0,
     },
   ],
 
@@ -110,75 +115,23 @@ const initialState: any = {
   favoriteItems: [],
 
   // Cart array
-  cart: [
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 0,
-      categoryId: 2,
-      name: 'Saske Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1400,
-      size: [
-        {
-          id: 0,
-          size: 350,
-          val: 'gram',
-        },
-        {
-          id: 1,
-          size: 500,
-          val: 'gram',
-        },
-        {
-          id: 2,
-          size: 900,
-          val: 'gram',
-        },
-      ],
-      additional: [
-        {
-          id: 0,
-          name: 'Hot Jalapeno',
-          price: 2.5,
-        },
-        {
-          id: 1,
-          name: 'Mushrooms',
-          price: 2.5,
-        },
-        {
-          id: 2,
-          name: 'Hot Chiken',
-          price: 2.5,
-        },
-      ],
-    },
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 1,
-      categoryId: 2,
-      name: 'Naruto Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1300,
-    },
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 3,
-      categoryId: 2,
-      name: 'Boruto Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1200,
-    },
-  ],
+  cart: [],
 
   searchValue: '',
 
   // Selected Items
   selectedCategory: null,
+  selectedProduct: {},
 };
 
 export const menuReducer = (state: any = initialState, action: any): any => {
   switch (action.type) {
+    case SET_SELECTED_DETAIL_PROFILE:
+      return {
+        ...state,
+        selectedProduct: action.payload,
+      };
+
     case CHANGE_SEARCH_VALUE:
       return {
         ...state,
@@ -212,14 +165,6 @@ export const menuReducer = (state: any = initialState, action: any): any => {
       return {
         ...state,
         favoriteItems: state.favoriteItems.filter(
-          (item: any) => item.productId !== action.payload.productId,
-        ),
-      };
-
-    case REMOVE_FROM_CART:
-      return {
-        ...state,
-        cart: state.cart.filter(
           (item: any) => item.productId !== action.payload.productId,
         ),
       };
