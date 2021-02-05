@@ -6,6 +6,7 @@ import {ContactMain} from '../../screens/Contact/ContactMain';
 import {ChangePassword} from '../../screens/Contact/ChangePassword/ChangePassword';
 import {stackMOptions} from './stackMOptions';
 import {ProfileInfo} from '../../screens/Contact/ProfileInfo/ProfileInfo';
+import ForgotPassword from '../../screens/Contact/ForgotPassword/ForgotPassword';
 
 const Stack = createStackNavigator();
 
@@ -19,6 +20,12 @@ const ContactsStack = () => {
       />
 
       <Stack.Screen
+        name={Screens.CONTACT_FORGOT_PASSWORD}
+        component={ForgotPassword}
+        options={{...stackMOptions, headerTransparent: true}}
+      />
+
+      <Stack.Screen
         name={Screens.CONTACT_CHANGE_PASSWORD}
         component={ChangePassword}
         options={{...stackMOptions, headerTransparent: true}}
@@ -27,7 +34,7 @@ const ContactsStack = () => {
       <Stack.Screen
         name={Screens.CONTACT_PROFILE_INFO}
         component={ProfileInfo}
-        options={{headerShown:false}}
+        options={{headerShown: false}}
       />
     </Stack.Navigator>
   );

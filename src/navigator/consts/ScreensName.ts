@@ -13,6 +13,7 @@ export const Screens = {
   CONTACT_MAIN: 'contactMain',
   CONTACT_CHANGE_PASSWORD: 'contactChangePassword',
   CONTACT_PROFILE_INFO: 'contactProfileInfo',
+  CONTACT_FORGOT_PASSWORD: 'contactFrogotPassword',
 
   CART_MAIN: 'cartMain',
   CART_MAP_ADRESS: 'cartMapAdress',

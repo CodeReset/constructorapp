@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from 'react';
 import {Text, View, ScrollView, ImageBackground} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import FormLogin from '../../../components/FormLogin/FormLogin';
 import FormRegister from '../../../components/FormRegister/FormRegister';
 import TabProfileBar from '../../../components/TabProfileBar/TabProfileBar';
-import { getToken } from '../../../helpers/tokenHelper';
+import {getToken} from '../../../helpers/tokenHelper';
 import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
-import {authLogin, authSignup} from '../../../store/actionTypes/authentification';
+import {SELECT_TAB} from '../../../store/actions/menuAction';
+import {
+  authLogin,
+  authSignup,
+} from '../../../store/actionTypes/authentification';
+import {AppStore} from '../../../store/store';
 
 import {styles} from './style';
 
@@ -35,33 +40,32 @@ export interface ILoginForm {
 
 export interface ISignUpForm {
   email: string;
-  fullname:string;
+  fullname: string;
   password: string;
 }
 
 export const ContactMain = () => {
-  useEffect(()=>{
-    getTokenAsync()
-  },[])
+  useEffect(() => {
+    getTokenAsync();
+  }, []);
 
-  const getTokenAsync =  async ()=>{
-    const token = await getToken()
-    if(token){
-      navigationService.navigate(Screens.CONTACT_PROFILE_INFO)
+  const getTokenAsync = async () => {
+    const token = await getToken();
+    if (token) {
+      navigationService.navigate(Screens.CONTACT_PROFILE_INFO);
     }
-  }
-
+  };
 
   const dispatch = useDispatch();
 
-  const [selectedTab, setSelectedTab] = useState<number>(0);
+  const selectedTab = useSelector((state: AppStore) => state.authReducer.tab);
 
   const changeTab = (id: number) => {
-    setSelectedTab(id);
+    dispatch({type: SELECT_TAB, payload: id});
   };
 
   const goToChangePassword = () => {
-    navigationService.navigate(Screens.CONTACT_CHANGE_PASSWORD);
+    navigationService.navigate(Screens.CONTACT_FORGOT_PASSWORD);
   };
 
   const goToProfile = (values: ILoginForm) => {
@@ -69,10 +73,10 @@ export const ContactMain = () => {
     dispatch(authLogin(email, password));
   };
 
-  const goToSignUp = (values:ISignUpForm)=>{
-    const {email, fullname, password} = values
-    dispatch(authSignup(email, fullname, password))
-  }
+  const goToSignUp = (values: ISignUpForm) => {
+    const {email, fullname, password} = values;
+    dispatch(authSignup(email, fullname, password));
+  };
 
   return (
     <ScrollView style={styles.backgroundScrollView}>

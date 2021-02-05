@@ -1,7 +1,8 @@
 import axios, {AxiosError} from 'axios';
 import {BASE_URL, APP_IDENTYFIER} from '../helpers/consts';
 import TestApi from './TestApi';
-import { showMessage } from "react-native-flash-message";
+import {showMessage} from 'react-native-flash-message';
+import MenuApi from './MenuApi';
 
 axios.interceptors.request.use(
   (config) => {
@@ -22,7 +23,7 @@ axios.interceptors.request.use(
           'GET, POST, OPTIONS, PUT, PATCH, DELETE',
         'Access-Control-Allow-Headers':
           'x-access-token, Origin, X-Requested-With, Content-Type, Accept',
-        'appidentificator': APP_IDENTYFIER
+        appidentificator: APP_IDENTYFIER,
       },
     };
   },
@@ -34,9 +35,9 @@ axios.interceptors.request.use(
 axios.interceptors.response.use(
   (response) => {
     showMessage({
-      message:response?.data?.message || JSON.stringify(response),
-      icon:'success',
-      type: "success",
+      message: response?.data?.message || JSON.stringify(response),
+      icon: 'success',
+      type: 'success',
     });
     return response;
   },
@@ -49,8 +50,8 @@ axios.interceptors.response.use(
         }
         showMessage({
           message: error?.response?.data?.message || JSON.stringify(error),
-          icon:'warning',
-          type: "warning",
+          icon: 'warning',
+          type: 'warning',
         });
         throw error;
       }
@@ -58,8 +59,8 @@ axios.interceptors.response.use(
       case 403: {
         showMessage({
           message: error?.response?.data?.message || JSON.stringify(error),
-          icon:'warning',
-          type: "warning",
+          icon: 'warning',
+          type: 'warning',
         });
         throw error;
       }
@@ -67,17 +68,17 @@ axios.interceptors.response.use(
       case 400: {
         showMessage({
           message: error?.response?.data?.message || JSON.stringify(error),
-          icon:'warning',
-          type: "warning",
+          icon: 'warning',
+          type: 'warning',
         });
-       throw error;
+        throw error;
       }
 
       default: {
         showMessage({
           message: error?.response?.data?.message || JSON.stringify(error),
-          icon:'warning',
-          type: "warning",
+          icon: 'warning',
+          type: 'warning',
         });
         throw error;
       }
@@ -87,6 +88,7 @@ axios.interceptors.response.use(
 
 class Api {
   testingApi = new TestApi();
+  menuApi = new MenuApi();
 }
 
 export default new Api();

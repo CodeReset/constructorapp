@@ -7,7 +7,7 @@ import {styles} from './styles';
 
 interface Props {
   list: ICategoryList[];
-  activeCategory: number | null;
+  activeCategory: string | null;
   changeActiveCategory: (item: ICategoryList) => void;
 }
 
@@ -17,7 +17,7 @@ const CategoryList = ({list, activeCategory, changeActiveCategory}: Props) => {
       {!!list.length &&
         list.map((item: ICategoryList) => (
           <CategoryItem
-            key={item.categoryId}
+            key={item.id}
             listItem={item}
             activeCategory={activeCategory}
             changeActiveCategory={changeActiveCategory}

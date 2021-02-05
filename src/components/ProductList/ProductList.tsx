@@ -16,7 +16,7 @@ const ProductList = ({list, addToCart, goToDetailInformation}: Props) => {
     <ScrollView style={styles.productList} horizontal={true}>
       {list.map((item: IProductList) => (
         <ProductItem
-          key={item.productId}
+          key={item.id}
           product={item}
           addToCart={addToCart}
           goToDetailInformation={goToDetailInformation}

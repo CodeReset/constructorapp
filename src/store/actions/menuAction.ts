@@ -2,8 +2,10 @@ export const GET_ALL_USERS = 'getAllUsers';
 export const REMOVE_USERS = 'removeUsers';
 export const ADD_TEXT = 'addText';
 
+export const SELECT_TAB = 'selectTab';
+
 export const CHANGE_SEARCH_VALUE = 'changeSearchValue';
-export const SET_DEFAULT_CATEGORY_VAL = 'changeDefaultCatVal';
+
 export const CHANGE_ACTIVE_CATEGORY = 'changeActiveCategory';
 
 export const SET_SELECTED_DETAIL_PROFILE = 'setSelectedDetailProfile';
@@ -17,6 +19,10 @@ export const TO_FROM_FOVORITE = 'toFromFovorite';
 // Adress
 export const SET_DEFAULT_ADRESS = 'setDafaultAdress';
 export const CHANGE_DEFAULT_ADRESS = 'changeDefaultAdress';
+
+// Menu product
+export const SET_ALL_MENU_CATEGORY = 'setAllMenuCategory';
+export const SET_ALL_MENU_PRODUCTS = 'setAllMenuProducts';
 
 export interface GetUsers {
   type: typeof GET_ALL_USERS;

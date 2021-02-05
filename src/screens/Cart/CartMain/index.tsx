@@ -9,16 +9,19 @@ import {
   REMOVE_ALL_FROM_CART,
   REMOVE_FROM_CART_MAIN,
 } from '../../../store/actions/cartAdder';
-import {REMOVE_FROM_CART} from '../../../store/actions/menuAction';
+import {SET_SELECTED_DETAIL_PROFILE} from '../../../store/actions/menuAction';
 import {IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
 
 import {styles} from './style';
+import {totalPriceSelect} from './totalPriceSelect';
 
 export const CartMain = () => {
   const dispatch = useDispatch();
   // Get cart
   const cart = useSelector((state: AppStore) => state.cartReducer.cart);
+
+  const totalPrice = useSelector((state: AppStore) => totalPriceSelect(state));
 
   const addItemFromCart = (item: IProductList) => {
     dispatch({type: ADD_TO_CART_MAIN, payload: item});
@@ -36,6 +39,11 @@ export const CartMain = () => {
     dispatch({type: REMOVE_ALL_FROM_CART, payload: item});
   };
 
+  const goToDetailInfoFromCart = (item: IProductList) => {
+    dispatch({type: SET_SELECTED_DETAIL_PROFILE, payload: item});
+    navigationService.navigate(Screens.MENU_DETAILINFO_SCREEN);
+  };
+
   return (
     <View style={styles.containerWrapper}>
       <View style={styles.scrollContainer}>
@@ -45,6 +53,7 @@ export const CartMain = () => {
             removeItem={removeItemFromCart}
             addItemFromCart={addItemFromCart}
             removeFromCart={removeFromCart}
+            goToDetailInfoFromCart={goToDetailInfoFromCart}
           />
         ) : (
           <Text style={styles.emptyTextControl}>
@@ -57,13 +66,15 @@ export const CartMain = () => {
       <View style={styles.costTotalWrapper}>
         <View>
           <Text style={styles.totlaPriceText}>Total price</Text>
-          <Text style={styles.costTotalWrapperText}>$20000</Text>
+          <Text style={styles.costTotalWrapperText}>KZT {totalPrice}</Text>
         </View>
-        <TouchableOpacity
-          style={styles.buttonAdderToCard}
-          onPress={goNextPayment}>
-          <Text style={styles.buttonAdderToCardText}>Next</Text>
-        </TouchableOpacity>
+        {totalPrice > 0 && (
+          <TouchableOpacity
+            style={styles.buttonAdderToCard}
+            onPress={goNextPayment}>
+            <Text style={styles.buttonAdderToCardText}>Next</Text>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

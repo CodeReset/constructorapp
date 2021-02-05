@@ -36,7 +36,7 @@ const MenuStack = () => {
           headerShown: true,
           headerTransparent: true,
           headerBackTitleVisible: false,
-          headerRight: () => <FavoriteRight info={route?.params?.info} />,
+          headerRight: () => <FavoriteRight />,
           ...stackMOptions,
         })}
       />

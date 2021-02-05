@@ -1,11 +1,23 @@
-import {Dispatch} from 'redux';
 import Api from '../../api/Api';
-import {DispatchType, GET_ALL_USERS} from '../actions/menuAction';
+import axios from 'axios';
+import {
+  SET_ALL_MENU_CATEGORY,
+  SET_ALL_MENU_PRODUCTS,
+} from '../actions/menuAction';
 
-export const getAllUsersTestRedux = () => async (
-  dispatch: Dispatch<DispatchType>,
-) => {
-  const {data} = await Api.testingApi.getAllUsersForTest();
-
-  dispatch({type: GET_ALL_USERS, payload: data});
+const getCategoryAndProducts = () => async (dispatch: any) => {
+  Api.menuApi.getAllMenu().then(
+    axios.spread((...responses: any) => {
+      dispatch({
+        type: SET_ALL_MENU_CATEGORY,
+        payload: responses[0]?.data?.data,
+      });
+      dispatch({
+        type: SET_ALL_MENU_PRODUCTS,
+        payload: responses[1]?.data?.data,
+      });
+    }),
+  );
 };
+
+export {getCategoryAndProducts};

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import CategoryList from '../../../components/CategoryList/CategoryList';
 import ProductList from '../../../components/ProductList/ProductList';
@@ -10,11 +10,11 @@ import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
 import {
   CHANGE_SEARCH_VALUE,
-  SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
   SET_DEFAULT_ADRESS,
   SET_SELECTED_DETAIL_PROFILE,
 } from '../../../store/actions/menuAction';
+import {getCategoryAndProducts} from '../../../store/actionTypes/menuActionTypes';
 import {ICategoryList, IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
 import {selectProducts} from './selectProducts';
@@ -25,7 +25,7 @@ export const Main = () => {
 
   // Set default Values
   useEffect(() => {
-    dispatch({type: SET_DEFAULT_CATEGORY_VAL});
+    dispatch(getCategoryAndProducts());
     dispatch({type: SET_DEFAULT_ADRESS});
   }, []);
 
@@ -50,7 +50,7 @@ export const Main = () => {
 
   // change active category
   const changeActiveCategory = (item: ICategoryList) => {
-    dispatch({type: CHANGE_ACTIVE_CATEGORY, payload: item.categoryId});
+    dispatch({type: CHANGE_ACTIVE_CATEGORY, payload: item.id});
   };
 
   // Get all products

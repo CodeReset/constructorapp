@@ -18,10 +18,12 @@ const ProductItem = ({product, addToCart, goToDetailInformation}: Props) => {
       onPress={() => goToDetailInformation(product)}>
       <Image source={{uri: product.img}} style={styles.itemProductImg} />
       <View style={styles.wrapperProdText}>
-        <Text style={styles.headingText}>{product.name}</Text>
+        <Text style={styles.headingText} numberOfLines={1}>
+          {product.name}
+        </Text>
         <Text style={styles.headingTextDisc}>{product.description}</Text>
         <View style={styles.flexWrapFlex}>
-          <Text style={styles.priceTextItem}>${product.price}</Text>
+          <Text style={styles.priceTextItem}>{product.price} kzt</Text>
           <TouchableOpacity
             style={styles.buttonAddCart}
             onPress={() => addToCart(product)}>

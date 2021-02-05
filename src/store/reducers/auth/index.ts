@@ -1,25 +1,18 @@
-import {createStore} from 'redux';
-import {
-  DispatchType,
-  GET_ALL_USERS,
-  REMOVE_USERS,
-  ADD_TEXT,
-} from '../../actions/menuAction';
+import {SELECT_TAB} from '../../actions/menuAction';
 
 const initialState: any = {
   text: '',
+  tab: 0,
 };
 
-export const authReducer = (
-  state: any = initialState,
-  action: DispatchType,
-): any => {
+export const authReducer = (state: any = initialState, action: any): any => {
   switch (action.type) {
-    case ADD_TEXT:
+    case SELECT_TAB:
       return {
         ...state,
-        text: 'Hello world',
+        tab: action.payload,
       };
+
     default:
       return state;
   }

@@ -13,6 +13,7 @@ interface Props {
   removeItem: (item: IProductList) => void;
   addItemFromCart: (item: IProductList) => void;
   removeFromCart: (item: IProductList) => void;
+  goToDetailInfoFromCart: (item: IProductList) => void;
 }
 
 const CartItem = ({
@@ -20,9 +21,12 @@ const CartItem = ({
   removeItem,
   addItemFromCart,
   removeFromCart,
+  goToDetailInfoFromCart,
 }: Props) => {
   return (
-    <TouchableOpacity style={styles.fovoriteIconWrapper}>
+    <TouchableOpacity
+      style={styles.fovoriteIconWrapper}
+      onPress={() => goToDetailInfoFromCart(cartInfo)}>
       <Image style={styles.fovoriteIconImage} source={{uri: cartInfo.img}} />
       <View style={styles.counterItem}>
         {/* Icon plus */}
@@ -43,7 +47,7 @@ const CartItem = ({
           ellipsizeMode="tail">
           {cartInfo.description}
         </Text>
-        <Text style={styles.favoritePrice}>${cartInfo.price}</Text>
+        <Text style={styles.favoritePrice}>KZT {cartInfo.price}</Text>
       </View>
       <TouchableOpacity onPress={() => removeFromCart(cartInfo)}>
         <CloseIconFavorite />

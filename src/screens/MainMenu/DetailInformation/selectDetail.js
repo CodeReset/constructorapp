@@ -7,8 +7,7 @@ export const selectDetail = createSelector(
   [selectedItem, cartArray],
   (seleted, cart) => {
     let count =
-      cart.find((cartItem) => cartItem?.productId === seleted.productId)
-        ?.count || 0;
+      cart.find((cartItem) => cartItem?.id === seleted.id)?.count || 0;
     return {
       ...seleted,
       count: count,

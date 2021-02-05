@@ -7,7 +7,7 @@ import {ICategoryList} from '../../store/reducers/menu';
 import {styles} from './styles';
 interface Props {
   listItem: ICategoryList;
-  activeCategory: number | null;
+  activeCategory: string | null;
   changeActiveCategory: (item: ICategoryList) => void;
 }
 
@@ -23,11 +23,11 @@ const CategoryItem = ({
       <Text
         style={[
           styles.itemText,
-          activeCategory === listItem.categoryId && styles.activeCategory,
+          activeCategory === listItem.id && styles.activeCategory,
         ]}>
         {listItem.name}
       </Text>
-      {activeCategory === listItem.categoryId && <ActiveUnderline />}
+      {activeCategory === listItem.id && <ActiveUnderline />}
     </TouchableOpacity>
   );
 };

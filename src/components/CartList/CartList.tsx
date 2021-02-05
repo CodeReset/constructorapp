@@ -8,6 +8,7 @@ interface Props {
   removeItem: (item: IProductList) => void;
   addItemFromCart: (item: IProductList) => void;
   removeFromCart: (item: IProductList) => void;
+  goToDetailInfoFromCart: (item: IProductList) => void;
 }
 
 const CartList = ({
@@ -15,6 +16,7 @@ const CartList = ({
   removeItem,
   addItemFromCart,
   removeFromCart,
+  goToDetailInfoFromCart,
 }: Props) => {
   return (
     <FlatList
@@ -25,9 +27,10 @@ const CartList = ({
           removeItem={removeItem}
           addItemFromCart={addItemFromCart}
           removeFromCart={removeFromCart}
+          goToDetailInfoFromCart={goToDetailInfoFromCart}
         />
       )}
-      keyExtractor={(item) => item.productId.toString()}
+      keyExtractor={(item) => item.id.toString()}
     />
   );
 };

@@ -19,7 +19,7 @@ const FovoriteList = ({favorited, removeItemFromFavorite}: Props) => {
           removeItemFromFavorite={removeItemFromFavorite}
         />
       )}
-      keyExtractor={(item) => item.productId.toString()}
+      keyExtractor={(item) => item.id.toString()}
     />
   );
 };

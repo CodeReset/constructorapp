@@ -15,14 +15,14 @@ export const cartReducer = (state: any = initialState, action: any) => {
       return {
         ...state,
         cart: state.cart.filter(
-          (item: IProductList) => item.productId !== action.payload.productId,
+          (item: IProductList) => item.id !== action.payload.id,
         ),
       };
 
     case ADD_TO_CART_MAIN:
       let isFind = false;
       let newCart = state.cart.map((item: IProductList) => {
-        if (item.productId === action.payload.productId) {
+        if (item.id === action.payload.id) {
           item.count++;
           isFind = true;
         }
@@ -39,7 +39,7 @@ export const cartReducer = (state: any = initialState, action: any) => {
 
     case REMOVE_FROM_CART_MAIN:
       let newCart2 = state.cart.map((item: IProductList) => {
-        if (item.productId === action.payload.productId) {
+        if (item.id === action.payload.id) {
           if (item.count > 0) {
             item.count--;
           }

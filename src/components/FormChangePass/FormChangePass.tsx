@@ -13,7 +13,7 @@ interface Props {}
 const FormChangePass = ({}: Props) => {
   return (
     <Formik
-      initialValues={{oldPassword: '', newPassword: '', confirmPassword: ''}}
+      initialValues={{code: '', newPassword: '', confirmPassword: ''}}
       validationSchema={validationChangeSchema}
       onSubmit={(values) => {
         console.log(values);
@@ -23,14 +23,13 @@ const FormChangePass = ({}: Props) => {
           <Text style={styles.labelForm}>Old password</Text>
           <TextInput
             style={styles.inputForm}
-            value={props.values.oldPassword}
-            onChangeText={props.handleChange('oldPassword')}
-            placeholder="Old Password"
-            secureTextEntry={true}
+            value={props.values.code}
+            onChangeText={props.handleChange('code')}
+            placeholder="Reset Code"
             placeholderTextColor="#9FABC2"
           />
-          {props.errors.oldPassword && (
-            <Text style={styles.errorText}>{props.errors.oldPassword}</Text>
+          {props.errors.code && (
+            <Text style={styles.errorText}>{props.errors.code}</Text>
           )}
 
           <Text style={styles.labelForm}>Create New Password</Text>

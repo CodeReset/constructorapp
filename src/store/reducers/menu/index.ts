@@ -1,131 +1,68 @@
 import {
   CHANGE_SEARCH_VALUE,
-  SET_DEFAULT_CATEGORY_VAL,
   CHANGE_ACTIVE_CATEGORY,
   TO_FROM_FOVORITE,
-  REMOVE_FROM_CART,
   SET_SELECTED_DETAIL_PROFILE,
+  SET_ALL_MENU_CATEGORY,
+  SET_ALL_MENU_PRODUCTS,
 } from '../../actions/menuAction';
 
 export interface ICategoryList {
-  categoryId: number;
+  id: string;
+  appId: string;
   name: string;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface IProductList {
-  img: string;
-  productId: number;
-  categoryId: number;
+  id: string;
+  appId: string;
+  categoryId: string;
   name: string;
-  count: number;
   description: string;
   price: number;
+  img: string;
+  options: null | any;
   size?: any;
   additional?: any;
+  count: number;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 const initialState: any = {
-  categories: [
-    {
-      categoryId: 0,
-      name: 'Pizza',
-    },
-    {
-      categoryId: 1,
-      name: 'Burger',
-    },
-    {
-      categoryId: 2,
-      name: 'Sushi',
-    },
-    {
-      categoryId: 3,
-      name: 'Kebab',
-    },
-    {
-      categoryId: 4,
-      name: 'Soup',
-    },
-  ],
-  products: [
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 0,
-      categoryId: 2,
-      name: 'Saske Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1400,
-      count: 0,
-      size: [
-        {
-          id: 0,
-          size: 350,
-          val: 'gram',
-        },
-        {
-          id: 1,
-          size: 500,
-          val: 'gram',
-        },
-        {
-          id: 2,
-          size: 900,
-          val: 'gram',
-        },
-      ],
-      additional: [
-        {
-          id: 0,
-          name: 'Hot Jalapeno',
-          price: 2.5,
-        },
-        {
-          id: 1,
-          name: 'Mushrooms',
-          price: 2.5,
-        },
-        {
-          id: 2,
-          name: 'Hot Chiken',
-          price: 2.5,
-        },
-      ],
-    },
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 1,
-      categoryId: 2,
-      name: 'Naruto Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1300,
-      count: 0,
-    },
-    {
-      img: 'https://cabare.gr/wp-content/uploads/2018/07/maki-sushi.jpg',
-      productId: 3,
-      categoryId: 2,
-      name: 'Boruto Roll',
-      description: 'Kino, kani, rice, avocado, ikra...',
-      price: 1200,
-      count: 0,
-    },
-  ],
+  // Menu
+  categories: [],
+  products: [],
 
   // Fovorite array
   favoriteItems: [],
 
-  // Cart array
-  cart: [],
-
+  // Searcher
   searchValue: '',
 
   // Selected Items
-  selectedCategory: null,
+  selectedCategory: {},
   selectedProduct: {},
 };
 
 export const menuReducer = (state: any = initialState, action: any): any => {
   switch (action.type) {
+    // Заполнение категориями
+    case SET_ALL_MENU_CATEGORY:
+      return {
+        ...state,
+        categories: action.payload,
+        selectedCategory: action.payload[0].id,
+      };
+    // Заполнение продуктами
+    case SET_ALL_MENU_PRODUCTS:
+      return {
+        ...state,
+        products: action.payload,
+      };
+
     case SET_SELECTED_DETAIL_PROFILE:
       return {
         ...state,
@@ -138,12 +75,6 @@ export const menuReducer = (state: any = initialState, action: any): any => {
         searchValue: action.payload,
       };
 
-    case SET_DEFAULT_CATEGORY_VAL:
-      return {
-        ...state,
-        selectedCategory: state?.categories[2]?.categoryId,
-      };
-
     case CHANGE_ACTIVE_CATEGORY:
       return {
         ...state,
@@ -153,9 +84,7 @@ export const menuReducer = (state: any = initialState, action: any): any => {
     // Add and Remove product from fovorite
     case TO_FROM_FOVORITE:
       if (
-        !state.favoriteItems.some(
-          (item: any) => item.productId === action.payload.productId,
-        )
+        !state.favoriteItems.some((item: any) => item.id === action.payload.id)
       ) {
         return {
           ...state,
@@ -165,7 +94,7 @@ export const menuReducer = (state: any = initialState, action: any): any => {
       return {
         ...state,
         favoriteItems: state.favoriteItems.filter(
-          (item: any) => item.productId !== action.payload.productId,
+          (item: any) => item.id !== action.payload.id,
         ),
       };
 

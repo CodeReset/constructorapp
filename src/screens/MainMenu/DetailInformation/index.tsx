@@ -33,10 +33,6 @@ export const DetailInformation = () => {
   const info = useSelector((state: AppStore) => selectDetail(state));
   // const {info} = route.params;
 
-  const addToCard = () => {
-    console.log('Add to card');
-  };
-
   // Refactor
   const [size, setSize] = useState({});
 
@@ -105,19 +101,26 @@ export const DetailInformation = () => {
                 <Text style={styles.textDescriptionLine}>350g</Text>
               </View>
             </View>
-
-            <SizeProductList info={info} size={size} setSizec={changeSetSize} />
-            <AditionalProduct
-              info={info}
-              additional={additional}
-              setAdditionalC={changeSetAditional}
-            />
+            {!!info?.size?.length && (
+              <SizeProductList
+                info={info}
+                size={size}
+                setSizec={changeSetSize}
+              />
+            )}
+            {!!info?.additional?.length && (
+              <AditionalProduct
+                info={info}
+                additional={additional}
+                setAdditionalC={changeSetAditional}
+              />
+            )}
           </View>
         </ScrollView>
       </View>
       <View style={styles.costTotalWrapper}>
-        <Text style={styles.costTotalWrapperText}>${info.price}</Text>
-        <TouchableOpacity style={styles.buttonAdderToCard} onPress={addToCard}>
+        <Text style={styles.costTotalWrapperText}>KZT {info.price}</Text>
+        <TouchableOpacity style={styles.buttonAdderToCard} onPress={addToCart}>
           <Text style={styles.buttonAdderToCardText}>Add to cart</Text>
         </TouchableOpacity>
       </View>
