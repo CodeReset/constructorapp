@@ -5,6 +5,8 @@ import {
   SET_SELECTED_DETAIL_PROFILE,
   SET_ALL_MENU_CATEGORY,
   SET_ALL_MENU_PRODUCTS,
+  LOADER_ACTIVATE,
+  LOADER_OFF_ACTIVE,
 } from '../../actions/menuAction';
 
 export interface ICategoryList {
@@ -45,6 +47,8 @@ const initialState: any = {
   // Selected Items
   selectedCategory: {},
   selectedProduct: {},
+
+  loadingData: false,
 };
 
 export const menuReducer = (state: any = initialState, action: any): any => {
@@ -96,6 +100,19 @@ export const menuReducer = (state: any = initialState, action: any): any => {
         favoriteItems: state.favoriteItems.filter(
           (item: any) => item.id !== action.payload.id,
         ),
+      };
+
+    // ActivateLoader
+    case LOADER_ACTIVATE:
+      return {
+        ...state,
+        loadingData: true,
+      };
+
+    case LOADER_OFF_ACTIVE:
+      return {
+        ...state,
+        loadingData: false,
       };
 
     default:

@@ -5,9 +5,11 @@ import CategoryList from '../../../components/CategoryList/CategoryList';
 import ProductList from '../../../components/ProductList/ProductList';
 
 import Heading from '../../../components/UI/Heading/Heading';
+import Loader from '../../../components/UI/Loader/Loader';
 import SearchPanel from '../../../components/UI/SearchPanel/SearchPanel';
 import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
+import {ADD_TO_CART_MAIN} from '../../../store/actions/cartAdder';
 import {
   CHANGE_SEARCH_VALUE,
   CHANGE_ACTIVE_CATEGORY,
@@ -28,6 +30,11 @@ export const Main = () => {
     dispatch(getCategoryAndProducts());
     dispatch({type: SET_DEFAULT_ADRESS});
   }, []);
+
+  //Get loader
+  const loaderMenu = useSelector(
+    (state: AppStore) => state.menuReducer.loadingData,
+  );
 
   // Get all categories
   const allCategories = useSelector(
@@ -58,7 +65,7 @@ export const Main = () => {
 
   // Add item to cart
   const addToCart = (item: IProductList) => {
-    console.log('Add item to cart', item);
+    dispatch({type: ADD_TO_CART_MAIN, payload: item});
   };
 
   const goToDetailInformation = (item: IProductList) => {
@@ -74,17 +81,23 @@ export const Main = () => {
           searchValue={valueSearch}
           handleChangeSearchValue={changeSearchValues}
         />
-        <CategoryList
-          list={allCategories || []}
-          activeCategory={activeCategory}
-          changeActiveCategory={changeActiveCategory}
-        />
+        {loaderMenu ? (
+          <Loader />
+        ) : (
+          <View>
+            <CategoryList
+              list={allCategories || []}
+              activeCategory={activeCategory}
+              changeActiveCategory={changeActiveCategory}
+            />
 
-        <ProductList
-          list={producetsItems}
-          addToCart={addToCart}
-          goToDetailInformation={goToDetailInformation}
-        />
+            <ProductList
+              list={producetsItems}
+              addToCart={addToCart}
+              goToDetailInformation={goToDetailInformation}
+            />
+          </View>
+        )}
       </ScrollView>
     </View>
   );

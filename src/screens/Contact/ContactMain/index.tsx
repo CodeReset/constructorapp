@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import FormLogin from '../../../components/FormLogin/FormLogin';
 import FormRegister from '../../../components/FormRegister/FormRegister';
 import TabProfileBar from '../../../components/TabProfileBar/TabProfileBar';
+import Loader from '../../../components/UI/Loader/Loader';
 import {getToken} from '../../../helpers/tokenHelper';
 import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
@@ -58,6 +59,11 @@ export const ContactMain = () => {
 
   const dispatch = useDispatch();
 
+  // Get auth loader
+  const loaderAuth = useSelector(
+    (state: AppStore) => state.authReducer.loaderAuth,
+  );
+
   const selectedTab = useSelector((state: AppStore) => state.authReducer.tab);
 
   const changeTab = (id: number) => {
@@ -88,16 +94,20 @@ export const ContactMain = () => {
 
       <TabProfileBar tabs={tabs} selectedTab={selectedTab} setTab={changeTab} />
 
-      <View style={styles.wrapprFormContent}>
-        {selectedTab === 0 ? (
-          <FormLogin
-            goToChangePassword={goToChangePassword}
-            goToProfile={goToProfile}
-          />
-        ) : (
-          <FormRegister goToSignUp={goToSignUp} />
-        )}
-      </View>
+      {loaderAuth ? (
+        <Loader />
+      ) : (
+        <View style={styles.wrapprFormContent}>
+          {selectedTab === 0 ? (
+            <FormLogin
+              goToChangePassword={goToChangePassword}
+              goToProfile={goToProfile}
+            />
+          ) : (
+            <FormRegister goToSignUp={goToSignUp} />
+          )}
+        </View>
+      )}
     </ScrollView>
   );
 };

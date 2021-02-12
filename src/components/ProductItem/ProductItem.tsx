@@ -21,7 +21,9 @@ const ProductItem = ({product, addToCart, goToDetailInformation}: Props) => {
         <Text style={styles.headingText} numberOfLines={1}>
           {product.name}
         </Text>
-        <Text style={styles.headingTextDisc}>{product.description}</Text>
+        <Text style={styles.headingTextDisc} numberOfLines={1}>
+          {product.description}
+        </Text>
         <View style={styles.flexWrapFlex}>
           <Text style={styles.priceTextItem}>{product.price} kzt</Text>
           <TouchableOpacity

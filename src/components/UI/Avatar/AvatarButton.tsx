@@ -10,7 +10,9 @@ const AvatarButton = () => {
   return (
     <TouchableOpacity
       style={styles.buttonRigh}
-      onPress={() => navigationService.navigate(Screens.CONTACT_MAIN)}>
+      onPress={() =>
+        navigationService.navigate(Screens.UNIVERSAL_STACK_CONTACT)
+      }>
       <AvatarIcon />
     </TouchableOpacity>
   );

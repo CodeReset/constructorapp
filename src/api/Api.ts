@@ -34,11 +34,11 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
   (response) => {
-    showMessage({
-      message: response?.data?.message || JSON.stringify(response),
-      icon: 'success',
-      type: 'success',
-    });
+    // showMessage({
+    //   message: response?.data?.message || JSON.stringify(response),
+    //   icon: 'success',
+    //   type: 'success',
+    // });
     return response;
   },
   (error: AxiosError) => {
@@ -90,12 +90,10 @@ class Api {
   testingApi = new TestApi();
   menuApi = new MenuApi();
 
-
   axiosToken = (token: string) => {
     console.log('token', token);
     axios.defaults.headers.Authorization = `Bearer ${token}`;
   };
-
 }
 
 export default new Api();

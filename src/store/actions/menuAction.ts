@@ -4,6 +4,10 @@ export const ADD_TEXT = 'addText';
 
 export const SELECT_TAB = 'selectTab';
 
+// Loader auth
+export const LOADER_AUTHENTIFICATION = 'loaderAuthentification';
+export const LOADER_OFF_AUTHENTIFICATION = 'loaderOffAuthentification';
+
 export const CHANGE_SEARCH_VALUE = 'changeSearchValue';
 
 export const CHANGE_ACTIVE_CATEGORY = 'changeActiveCategory';
@@ -23,6 +27,10 @@ export const CHANGE_DEFAULT_ADRESS = 'changeDefaultAdress';
 // Menu product
 export const SET_ALL_MENU_CATEGORY = 'setAllMenuCategory';
 export const SET_ALL_MENU_PRODUCTS = 'setAllMenuProducts';
+
+// Loader
+export const LOADER_ACTIVATE = 'loaderActivate';
+export const LOADER_OFF_ACTIVE = 'loaderOffActive';
 
 export interface GetUsers {
   type: typeof GET_ALL_USERS;
