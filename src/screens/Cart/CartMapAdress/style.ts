@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../../config_app';
+import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
   mapWrapper: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: Theme[Config.theme].mainColor,
   },
   mapStyle: {
     flex: 1,
@@ -14,11 +16,11 @@ export const styles = StyleSheet.create({
   contentContainerStyle: {
     paddingHorizontal: 30,
     paddingVertical: 10,
-    backgroundColor: '#ffffff',
+    backgroundColor: Theme[Config.theme].mainColor,
   },
   header: {
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: Theme[Config.theme].mainColor,
     paddingVertical: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
@@ -26,7 +28,7 @@ export const styles = StyleSheet.create({
   panelHandle: {
     width: 40,
     height: 2,
-    backgroundColor: 'rgba(0,0,0,0.3)',
+    backgroundColor: Theme[Config.theme].loaderColor,
     borderRadius: 4,
   },
 });

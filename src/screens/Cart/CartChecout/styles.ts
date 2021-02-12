@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
   },
   costTotalWrapperText: {
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontSize: 24,
     lineHeight: 31,
     fontFamily: 'Mont-SemiBold',
@@ -50,14 +50,14 @@ export const styles = StyleSheet.create({
     fontFamily: 'Mont-SemiBold',
   },
   totlaPriceText: {
-    color: '#181D2D',
+    color: Theme[Config.theme].mainText,
     fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
   },
 
   couponLable: {
-    color: '#181D2D',
+    color: Theme[Config.theme].mainText,
     fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
@@ -106,13 +106,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   taxTextLeft: {
-    color: '#181D2D',
+    color: Theme[Config.theme].mainText,
     fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
   },
   taxTextRight: {
-    color: '#181D2D',
+    color: Theme[Config.theme].mainText,
     fontSize: 16,
     fontFamily: 'Mont-Bold',
   },

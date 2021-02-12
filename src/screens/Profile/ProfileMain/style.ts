@@ -20,5 +20,6 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     fontFamily: 'Mont-SemiBold',
     fontSize: 15,
+    color: Theme[Config.theme].mainText,
   },
 });

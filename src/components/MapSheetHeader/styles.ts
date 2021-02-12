@@ -1,17 +1,19 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../config_app';
+import {Theme} from '../../styles';
 
 export const styles = StyleSheet.create({
   headingHeaderList: {
     fontFamily: 'Mont-SemiBold',
     fontSize: 16,
     lineHeight: 20,
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
   },
   headingHeaderBottomList: {
     fontFamily: 'Mont-SemiBold',
     fontSize: 16,
     lineHeight: 20,
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     marginTop: 45,
     marginBottom: 8,
   },
@@ -48,7 +50,7 @@ export const styles = StyleSheet.create({
   contextText: {
     fontSize: 14,
     lineHeight: 18,
-    color: '#181D2D',
+    color: Theme[Config.theme].mainText,
     fontFamily: 'Mont-SemiBold',
     marginTop: 5,
   },

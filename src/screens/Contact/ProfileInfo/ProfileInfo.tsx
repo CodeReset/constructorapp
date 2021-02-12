@@ -8,8 +8,6 @@ import Heading from '../../../components/UI/Heading/Heading';
 import {styles} from './styles';
 
 export const ProfileInfo = () => {
-  
-
   return (
     <ScrollView style={styles.backgroundScrollView}>
       <ImageBackground

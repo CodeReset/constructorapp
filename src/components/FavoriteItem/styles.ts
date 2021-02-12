@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../config_app';
+import {Theme} from '../../styles';
 
 export const styles = StyleSheet.create({
   fovoriteIconWrapper: {
@@ -19,19 +21,19 @@ export const styles = StyleSheet.create({
   favoriteName: {
     fontSize: 16,
     lineHeight: 20,
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontFamily: 'Mont-SemiBold',
   },
   favoriteDescr: {
     fontSize: 12,
     lineHeight: 18,
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
     marginTop: 7,
     fontFamily: 'Mont-SemiBold',
   },
   favoritePrice: {
     marginTop: 10,
-    color: '#FD4035',
+    color: Theme[Config.theme].loaderColor,
     fontFamily: 'Mont-Bold',
     fontSize: 16,
     lineHeight: 20,

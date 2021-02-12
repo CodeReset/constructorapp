@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../../config_app';
+import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
   minusDescriment: {
@@ -21,7 +23,7 @@ export const styles = StyleSheet.create({
   countetItemProducts: {
     fontSize: 24,
     lineHeight: 31,
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontFamily: 'Mont-SemiBold',
   },
   counterWrapper: {

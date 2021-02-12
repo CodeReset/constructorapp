@@ -1,8 +1,10 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../../config_app';
+import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
   buttonFormWrapper: {
-    backgroundColor: '#FD4035',
+    backgroundColor: Theme[Config.theme].buttonColor,
     borderRadius: 18,
     alignItems: 'center',
     justifyContent: 'center',

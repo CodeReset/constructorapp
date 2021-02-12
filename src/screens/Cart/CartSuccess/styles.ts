@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 24,
     lineHeight: 31,
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontFamily: 'Mont-SemiBold',
     marginTop: 25,
   },

@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../../config_app';
+import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
   searchContainer: {
@@ -30,7 +32,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     height: 58,
     borderRadius: 18,
-    backgroundColor: '#FD4035',
+    backgroundColor: Theme[Config.theme].buttonColor,
     justifyContent: 'center',
     alignItems: 'center',
   },

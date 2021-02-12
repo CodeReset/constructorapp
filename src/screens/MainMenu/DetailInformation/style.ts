@@ -27,7 +27,7 @@ export const styles = StyleSheet.create({
   descriptionInfo: {
     fontSize: 12,
     lineHeight: 18,
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
     marginTop: 23,
     fontFamily: 'Mont-SemiBold',
   },
@@ -76,7 +76,7 @@ export const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
   },
   activeItemSizeGramm: {
     backgroundColor: '#FD4035',
@@ -126,7 +126,7 @@ export const styles = StyleSheet.create({
     marginBottom: 30,
   },
   costTotalWrapperText: {
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontSize: 24,
     lineHeight: 31,
     fontFamily: 'Mont-SemiBold',
@@ -135,7 +135,7 @@ export const styles = StyleSheet.create({
     width: 190,
     height: 58,
     borderRadius: 18,
-    backgroundColor: '#FD4035',
+    backgroundColor: Theme[Config.theme].buttonColor,
     alignItems: 'center',
     justifyContent: 'center',
   },

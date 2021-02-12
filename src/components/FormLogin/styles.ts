@@ -1,7 +1,9 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../config_app';
+import {Theme} from '../../styles';
 export const styles = StyleSheet.create({
   labelForm: {
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
     fontSize: 12,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',
@@ -24,7 +26,7 @@ export const styles = StyleSheet.create({
     padding: 15,
   },
   wrapperFormForgotText: {
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
     fontSize: 14,
     lineHeight: 18,
     fontFamily: 'Mont-SemiBold',

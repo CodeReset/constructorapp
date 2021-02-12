@@ -1,9 +1,11 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../../config_app';
+import {Theme} from '../../../styles';
 
 export const styles = StyleSheet.create({
   backgroundScrollView: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: Theme[Config.theme].mainColor,
   },
   bgTopContainer: {
     width: '100%',
@@ -24,7 +26,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   tabItemAuthentifText: {
-    color: '#9FABC2',
+    color: Theme[Config.theme].inactiveText,
     fontFamily: 'Mont-SemiBold',
     fontSize: 14,
     lineHeight: 18,
@@ -34,11 +36,12 @@ export const styles = StyleSheet.create({
     borderBottomColor: '#FD4035',
   },
   activeTabText: {
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
     fontFamily: 'Mont-Bold',
   },
   wrapprFormContent: {
     marginTop: 15,
     paddingHorizontal: 30,
+    paddingBottom: 20,
   },
 });

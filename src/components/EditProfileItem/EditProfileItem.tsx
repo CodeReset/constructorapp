@@ -3,7 +3,7 @@ import {Text, View, TextInput, TouchableOpacity} from 'react-native';
 
 import ActiveEdit from '../../assets/svg/ActiveEdit';
 import IconProfileEdit from '../../assets/svg/IconProfileEdit';
-import {styles} from '../CategoryItem/styles';
+import {styles} from './styles';
 
 interface Props {
   label: string;

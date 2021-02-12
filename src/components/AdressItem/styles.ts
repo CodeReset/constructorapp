@@ -1,4 +1,6 @@
 import {StyleSheet} from 'react-native';
+import {Config} from '../../../config_app';
+import {Theme} from '../../styles';
 export const styles = StyleSheet.create({
   radioButtonWrapper: {
     width: 20,
@@ -30,6 +32,6 @@ export const styles = StyleSheet.create({
     marginLeft: 10,
     fontSize: 16,
     fontFamily: 'Mont-SemiBold',
-    color: '#141929',
+    color: Theme[Config.theme].mainText,
   },
 });
