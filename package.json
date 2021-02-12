@@ -27,6 +27,7 @@
     "react-native-flash-message": "^0.1.22",
     "react-native-gesture-handler": "^1.9.0",
     "react-native-modalize": "^2.0.8",
+    "react-native-phone-call": "^1.0.9",
     "react-native-reanimated": "^1.13.2",
     "react-native-safe-area-context": "^3.1.9",
     "react-native-screens": "^2.16.1",
