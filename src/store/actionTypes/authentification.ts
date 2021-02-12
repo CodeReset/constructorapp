@@ -10,6 +10,7 @@ const authLogin = (email: string, password: string) => async (
   try {
     const {data} = await Api.testingApi.apiAuthLogin(email, password);
     await setToken(data.token);
+    Api.axiosToken(data.token);
     if (await getToken()) {
       navigationService.navigate(Screens.CONTACT_PROFILE_INFO);
     }

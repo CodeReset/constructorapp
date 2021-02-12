@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import CartList from '../../../components/CartList/CartList';
+import {helperTotalPrice} from '../../../helpers/helperTotalPrice';
 import {Screens} from '../../../navigator/consts/ScreensName';
 import navigationService from '../../../navigator/navigationService';
 import {
@@ -12,6 +13,7 @@ import {
 import {SET_SELECTED_DETAIL_PROFILE} from '../../../store/actions/menuAction';
 import {IProductList} from '../../../store/reducers/menu';
 import {AppStore} from '../../../store/store';
+import {selectCartById} from './selectCartById';
 
 import {styles} from './style';
 import {totalPriceSelect} from './totalPriceSelect';
@@ -19,7 +21,7 @@ import {totalPriceSelect} from './totalPriceSelect';
 export const CartMain = () => {
   const dispatch = useDispatch();
   // Get cart
-  const cart = useSelector((state: AppStore) => state.cartReducer.cart);
+  const cart = useSelector((state: AppStore) => selectCartById(state));
 
   const totalPrice = useSelector((state: AppStore) => totalPriceSelect(state));
 
@@ -66,7 +68,9 @@ export const CartMain = () => {
       <View style={styles.costTotalWrapper}>
         <View>
           <Text style={styles.totlaPriceText}>Total price</Text>
-          <Text style={styles.costTotalWrapperText}>KZT {totalPrice}</Text>
+          <Text style={styles.costTotalWrapperText}>
+            KZT {helperTotalPrice(cart)}
+          </Text>
         </View>
         {totalPrice > 0 && (
           <TouchableOpacity

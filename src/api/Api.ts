@@ -89,6 +89,13 @@ axios.interceptors.response.use(
 class Api {
   testingApi = new TestApi();
   menuApi = new MenuApi();
+
+
+  axiosToken = (token: string) => {
+    console.log('token', token);
+    axios.defaults.headers.Authorization = `Bearer ${token}`;
+  };
+
 }
 
 export default new Api();
