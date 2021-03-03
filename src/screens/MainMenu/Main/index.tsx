@@ -2,7 +2,11 @@ import React, {useEffect} from 'react';
 import {View, ScrollView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import CategoryList from '../../../components/CategoryList/CategoryList';
+
+// iMPORTS
 import ProductList from '../../../components/ProductList/ProductList';
+import TestProductList from '../../../components/TestProductList/TestProductList';
+// iMPORTS
 
 import Heading from '../../../components/UI/Heading/Heading';
 import Loader from '../../../components/UI/Loader/Loader';
@@ -91,11 +95,20 @@ export const Main = () => {
               changeActiveCategory={changeActiveCategory}
             />
 
+            {/* Two different components */}
+            {/* Horizontal */}
             <ProductList
               list={producetsItems}
               addToCart={addToCart}
               goToDetailInformation={goToDetailInformation}
             />
+            {/* Vertical */}
+            <TestProductList
+              list={producetsItems}
+              addToCart={addToCart}
+              goToDetailInformation={goToDetailInformation}
+            />
+            {/* Two different components */}
           </View>
         )}
       </ScrollView>
